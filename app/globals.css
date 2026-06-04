@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@import "@fontsource/outfit/400.css";
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "@fontsource/outfit/700.css";
+@import "@fontsource/figtree/400.css";
+@import "@fontsource/figtree/500.css";
+@import "@fontsource/figtree/600.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-clay: var(--clay);
+
+  --shadow-soft: 0 1px 2px oklch(0.35 0.04 70 / 0.06), 0 8px 24px -8px oklch(0.35 0.04 70 / 0.12);
+  --shadow-card: 0 1px 2px oklch(0.35 0.04 70 / 0.04), 0 12px 36px -12px oklch(0.35 0.04 70 / 0.16);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Warm Sand palette */
+  --background: oklch(0.985 0.012 85);        /* #faf8f5 cream-white */
+  --foreground: oklch(0.32 0.03 60);          /* deep warm brown */
+  --cream: oklch(0.97 0.018 85);              /* #f5f1ea */
+  --sand: oklch(0.93 0.024 80);               /* #f0ebe3 */
+  --clay: oklch(0.78 0.045 75);               /* #c9b99a */
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.32 0.03 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.32 0.03 60);
+
+  --primary: oklch(0.46 0.045 60);            /* #8b7355 warm brown */
+  --primary-foreground: oklch(0.985 0.012 85);
+
+  --secondary: oklch(0.93 0.024 80);          /* sand */
+  --secondary-foreground: oklch(0.32 0.03 60);
+
+  --muted: oklch(0.95 0.018 82);
+  --muted-foreground: oklch(0.5 0.025 60);
+
+  --accent: oklch(0.78 0.045 75);             /* clay */
+  --accent-foreground: oklch(0.28 0.03 60);
+
+  --destructive: oklch(0.55 0.18 28);
+  --destructive-foreground: oklch(0.985 0.012 85);
+
+  --border: oklch(0.88 0.022 80);
+  --input: oklch(0.9 0.02 80);
+  --ring: oklch(0.6 0.055 70);
+}
+
+.dark {
+  --background: oklch(0.22 0.018 60);
+  --foreground: oklch(0.96 0.014 82);
+  --cream: oklch(0.28 0.02 60);
+  --sand: oklch(0.32 0.022 65);
+  --clay: oklch(0.68 0.05 75);
+  --card: oklch(0.28 0.02 60);
+  --card-foreground: oklch(0.96 0.014 82);
+  --popover: oklch(0.28 0.02 60);
+  --popover-foreground: oklch(0.96 0.014 82);
+  --primary: oklch(0.78 0.045 75);
+  --primary-foreground: oklch(0.22 0.018 60);
+  --secondary: oklch(0.32 0.022 65);
+  --secondary-foreground: oklch(0.96 0.014 82);
+  --muted: oklch(0.3 0.02 60);
+  --muted-foreground: oklch(0.72 0.02 75);
+  --accent: oklch(0.78 0.045 75);
+  --accent-foreground: oklch(0.22 0.018 60);
+  --destructive: oklch(0.65 0.18 28);
+  --destructive-foreground: oklch(0.985 0.012 85);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.7 0.04 75);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+  }
+  body {
+    @apply min-h-screen antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
